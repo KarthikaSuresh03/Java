@@ -9,7 +9,7 @@ class Calculator {
 		Scanner scan = new Scanner(System.in);
 		
 		do {		
-			System.out.println("CALCULATOR");
+			System.out.println("\nCALCULATOR");
 			System.out.println("----------\n");
 			System.out.println("MENU");
 			System.out.println("\t1 ADDITION");
@@ -23,7 +23,7 @@ class Calculator {
 			switch(menu) {
 			
 				case 1: {
-					System.out.print("Enter the First Number: ");
+					System.out.print("\nEnter the First Number: ");
 					num1 = scan.nextDouble();
 					System.out.print("Enter the Second Number: ");
 					num2 = scan.nextDouble();
@@ -52,7 +52,7 @@ class Calculator {
 					System.out.print("Enter the Second Number: ");
 					num2 = scan.nextDouble();
 					if(num2 == 0)
-						System.out.println("ERROR: Number Cannot Be Divided by Zero");
+						System.out.println("ERROR: Number Cannot Be Divided by Zero !");
 					else
 						System.out.println(num1+" / "+num2+" = "+(num1/num2));
 					break;
@@ -66,7 +66,7 @@ class Calculator {
 				default: {
 					System.out.println("ERROR: Invalid Choice !");
 					break;
-                }
+				}
 			}
 		}while(z==0);
 	}

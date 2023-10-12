@@ -42,6 +42,25 @@ class MatrixSumTrans {
 					mat2[i][j] = scan.nextInt();
 				}
 			}
+
+			System.out.println("Matrix 1");
+			for(i=0;i<r1;i++) {
+
+				for(j=0;j<c1;j++)
+					System.out.print(mat1[i][j]+"\t");
+
+				System.out.println();
+			}
+
+			System.out.println("Matrix 2");
+			for(i=0;i<r1;i++) {
+
+				for(j=0;j<c1;j++)
+					System.out.print(mat2[i][j]+"\t");
+
+				System.out.println();
+			}
+
 			sum = new int[r1][c1];
 			trans = new int[c1][r1];
 

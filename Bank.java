@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class BankAcc {
 
-	int accno;
+	int accno=-1;
 	String hname;
 	double balance = 0;
 	double amount;
@@ -21,18 +21,28 @@ class BankAcc {
 		
 		System.out.println("Enter the amount to be deposited");
 		amount = scan.nextDouble();
-		balance += amount;
+		
+		if(amount<=0)
+			System.out.println("ERROR!\nPlease enter a valid amount for depositing");
 
-		System.out.println("Amount Deposited: "+amount);
+		else {
+			balance += amount;
+			System.out.println("Amount Deposited: "+amount);
+		}
 	}
 
 	void withdraw() {
 
 		System.out.println("Enter the amount to be withdrawn");
 		amount = scan.nextDouble();
-		balance -= amount;
 
-		System.out.println("Amount Withdrawn: "+amount);
+		if(amount>balance)
+			System.out.println("ERROR!\nWithdrawal amount is greater than the current balance");
+
+		else {
+			balance -= amount;
+			System.out.println("Amount Withdrawn: "+amount);
+		}
 
 	}
 
@@ -74,21 +84,60 @@ class Bank {
 			menu = scan.nextInt();
 			System.out.println();
 
-			if(menu == 1)
-				a.createAcc();
-			else if(menu == 2)
-				a.depo();
-			else if(menu == 3)
-				a.withdraw();
-			else if(menu == 4)
-				a.checkBal();
-			else if(menu == 5)
-				a.displayData();
-			else if(menu == 6) {
-				System.out.println("Exiting the Program\nThank You!");
-				System.out.println("--------------------");
-			} else
-				System.out.println("ERROR: Invalid Choice!\nPlease enter a valid opton");
+			switch(menu) {
+		
+				case 1 : {
+
+					a.createAcc();
+					break;
+				}
+				case 2 : {
+
+					if(a.accno != -1)
+						a.depo();
+					else
+						System.out.println("Create an Account First");
+					break;
+				}
+				case 3 : {
+
+					if(a.accno != -1)
+						a.withdraw();
+					else
+						System.out.println("Create an Account First");
+					break;
+				}
+				case 4 : {
+
+					if(a.accno != -1)
+						a.checkBal();
+					else
+						System.out.println("Create an Account First");
+					break;
+
+				}
+				case 5 : {
+
+					if(a.accno != -1)
+						a.displayData();
+					else
+						System.out.println("Create an Account First");
+					break;
+				}
+				case 6 : {
+			
+						System.out.println("Exiting...");
+						System.out.println("Thank You!");
+						System.out.println("----------------------");
+					break;
+				}
+				default : {
+
+					System.out.println("ERROR: Invalid Choice!\nPlease enter a valid option");
+					break;
+
+				}
+			}
 		}
 	}
 }

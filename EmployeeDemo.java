@@ -73,7 +73,7 @@ class JuniorDeveloper extends Developer {
 		System.out.println("Joined team on the year: "+year);
 	}
 }
-class employeeDemo {
+class EmployeeDemo {
 
 	public static void main(String[] args) {
 

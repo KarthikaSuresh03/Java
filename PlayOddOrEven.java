@@ -3,7 +3,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-class OddOrEven {
+class PlayOddOrEven {
 
 	static int runsPlay(char a, int n, int game){
 

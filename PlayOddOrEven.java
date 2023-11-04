@@ -22,6 +22,7 @@ class PlayOddOrEven {
 			sNum = r.nextInt(7);
 			System.out.println("Your Choice");
 			uNum = s.nextInt();
+			
 			if (uNum>6 || uNum<0)
 				System.out.println("ERROR: CHOOSE A NUMBER BETWEEN 0 TO 6");
 			else {
@@ -46,7 +47,6 @@ class PlayOddOrEven {
 			}
 		}while(true);
 		return runs;
-
 	}
 
 	static void playGame(){
@@ -61,16 +61,18 @@ class PlayOddOrEven {
 		System.out.println("Choose: Odd or Even");
 		uSelect = s.nextLine();
 		sSelect = ((uSelect.equalsIgnoreCase("odd")||(uSelect.equalsIgnoreCase("even")))?((uSelect.equalsIgnoreCase("odd"))?("Even"):("Odd")):("0"));
+		
 		if(sSelect == "0"){
 
 			System.out.println("ERROR: INVALID CHOICE!");
 			return;
 		}
-
 		System.out.println("\nYour Choice: "+uSelect.toUpperCase()+"\t\tSystem Choice: "+sSelect.toUpperCase());
+		
 		System.out.println("\nChoose a Number");
 		sNum = r.nextInt(7);
 		uNum = s.nextInt();
+		
 		if(uNum>6 || uNum<0) {
 
 			System.out.println("ERROR: CHOOSE A NUMBER BETWEEN 0 TO 6");
